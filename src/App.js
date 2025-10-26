@@ -147,7 +147,7 @@ function App() {
       <section className="profile-img-container">
         {profiles.map((p, idx) => (
           <button key={idx} className="profile-img-btn" type="button" onClick={() => setProfile(profile === p.image ? null : p.image)} aria-pressed="mixed">
-            <img src={p.image} alt={`${p.name}`} aria-label={`${p.name}`} className={profile === p.image ? "selected" : ""}/>
+            <img src={p.image} alt={`${p.name}`} aria-label={`${p.name}`} className={profile === p.image ? "selected" : ""} loading="lazy"/>
           </button>
         ))}
       </section>
@@ -174,7 +174,7 @@ function App() {
           {!profile ? (
             <p className="msg">Select an image</p>
           ) : (
-            <img src={profile} alt="Avatar" />
+            <img src={profile} alt="Avatar" loading="lazy"/>
           )}
           <h3 className="username">{username || usernames[0]}</h3>
           <div className="decorative-divider"></div>
